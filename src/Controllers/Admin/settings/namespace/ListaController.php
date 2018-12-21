@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use XRA\Extend\Traits\CrudSimpleTrait as CrudTrait;
+//--- services 
+use XRA\Extend\Services\ThemeService;
+
 
 use Zend;
 
@@ -18,7 +21,7 @@ class ListaController  extends Controller{
     	$trans=trans();
     	$rows=$trans->getLoader()->namespaces();
 
-    	$view=CrudTrait::getView();
+    	$view=ThemeService::getView();
     	return view($view)->with('view',$view)->with('rows',$rows)->with('lang',\App::getLocale());
 
     	/*

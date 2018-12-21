@@ -12,7 +12,7 @@
 namespace XRA\Settings;
 
 use Illuminate\Support\Facades\Facade;
-   
+
 /**
  * This is the settings facade class.
  *
