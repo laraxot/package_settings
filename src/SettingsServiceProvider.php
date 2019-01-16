@@ -1,11 +1,11 @@
 <?php
 
+
+
 namespace XRA\Settings;
 
 use Illuminate\Support\ServiceProvider;
 use XRA\Extend\Traits\ServiceProviderTrait;
-
-use XRA\Extend\Traits\CrudSimpleTrait as CrudTrait;
 
 class SettingsServiceProvider extends ServiceProvider
 {
@@ -13,7 +13,8 @@ class SettingsServiceProvider extends ServiceProvider
 
     public static function topToolbar()
     {
-        $rows=\Config::all();
+        $rows = \Config::all();
+
         return view('settings::admin.topToolbar')->with('rows', $rows);
     }
 }

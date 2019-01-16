@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
  * This file is part of xra.
  *
@@ -27,14 +29,14 @@ class Settings extends Facade
      */
     public static function get($package)
     {
-        $dir = __DIR__ . '/../../' . $package . '/src';
-        $files = is_dir($dir) ? scandir($dir) : [];
+        $dir = __DIR__.'/../../'.$package.'/src';
+        $files = \is_dir($dir) ? \scandir($dir) : [];
 
         foreach ($files as $file) {
-            if ($file == 'Settings.json') {
-                $file_r = file_get_contents($dir . '/' . $file);
+            if ('Settings.json' == $file) {
+                $file_r = \file_get_contents($dir.'/'.$file);
 
-                return json_decode($file_r, true);
+                return \json_decode($file_r, true);
             }
         }
 
@@ -50,7 +52,7 @@ class Settings extends Facade
     {
         $settings = static::get($package);
 
-        if ($settings and array_key_exists('view', $settings)) {
+        if ($settings and \array_key_exists('view', $settings)) {
             return view($settings['view']);
         }
 

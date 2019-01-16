@@ -1,12 +1,14 @@
 <?php
 
+
+
 namespace XRA\Settings\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use XRA\XRA\Packages;
 use XRA\Settings\Models\Settings;
 use XRA\Settings\Settings as Setts;
+use XRA\XRA\Packages;
 
 class SettingsController extends Controller
 {

@@ -1,25 +1,23 @@
 <?php
 
+
+
 namespace XRA\Settings\Controllers\Admin\Settings;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use XRA\Extend\Traits\CrudSimpleTrait as CrudTrait;
 //--- services
 use XRA\Extend\Services\ThemeService;
-
-
-use Zend;
 
 class ConfigController extends Controller
 {
     public function index()
     {
         $params = \Route::current()->parameters();
-        $rows=\Config::all();
-        $navs=\Config::all();
-        $view=ThemeService::getView();
+        $rows = \Config::all();
+        $navs = \Config::all();
+        $view = ThemeService::getView();
+
         return view($view)->with('rows', $rows)
                 ->with('params', $params)
                 ->with('navs', $navs)
@@ -31,18 +29,18 @@ class ConfigController extends Controller
     {
         $params = \Route::current()->parameters();
         //dd($params);
-        extract($params);
-        $navs=\Config::all();
+        \extract($params);
+        $navs = \Config::all();
         //$rows=\Config::get($config_file);
-        $rows=config($id_config);
-        $view=ThemeService::getView();
+        $rows = config($id_config);
+        $view = ThemeService::getView();
+
         return view($view)->with('rows', $rows)
                 ->with('params', $params)
                 ->with('navs', $navs)
                 ->with('nav_active', $id_config)
                 ->with('view', $view);
     }
-
 
     /*
 
@@ -61,27 +59,28 @@ class ConfigController extends Controller
     }
     */
 
-
     public function update(Request $request)
     {
         $params = \Route::current()->parameters();
-        extract($params);
+        \extract($params);
         if (isset($id_config) && !isset($config_file)) {
-            $config_file=$id_config;
+            $config_file = $id_config;
         }
-        $data=$request->all();
-        $data['_token']='';
+        $data = $request->all();
+        $data['_token'] = '';
         unset($data['_token']);
-        $data['_method']='';
+        $data['_method'] = '';
         unset($data['_method']);
-        $res=setConfig([
-            'file'=>$config_file,
-            'data'=>$data,
+        $res = setConfig([
+            'file' => $config_file,
+            'data' => $data,
             //'msg'=>'['.$config_file.']!',
             ]);
-        $msg='Aggiornato ['.$config_file.']!';
+        $msg = 'Aggiornato ['.$config_file.']!';
         \Session::flash('status', $msg.' '.\Carbon\Carbon::now());
         //return \Redirect::back();
         return redirect()->route('settings.config.edit', $params);
-    }//end function update
+    }
+
+    //end function update
 }//end class
