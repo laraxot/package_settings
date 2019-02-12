@@ -1,10 +1,9 @@
 <?php
-
 namespace XRA\Settings\Controllers\Admin\Settings\namespace;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+//--- traits
 use XRA\Extend\Traits\CrudSimpleTrait as CrudTrait;
 //--- services 
 use XRA\Extend\Services\ThemeService;

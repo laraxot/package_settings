@@ -1,15 +1,13 @@
 <?php
-
-
-
 namespace XRA\Settings\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 //--- services
 use XRA\Extend\Services\ThemeService;
-//-------- Models ----------------
+//--- traits
 use XRA\Extend\Traits\ArtisanTrait;
+//-------- Models ----------------
 
 /*--move to seo
 

@@ -1,13 +1,11 @@
 <?php
-
-
-
 namespace XRA\Settings\Controllers\Admin\Translation;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 //--- services
 use XRA\Extend\Services\ThemeService;
+//--- traits
 use XRA\Extend\Traits\ArrayTrait;
 
 class ListaController extends Controller
