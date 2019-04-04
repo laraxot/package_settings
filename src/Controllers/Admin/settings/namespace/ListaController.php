@@ -13,7 +13,7 @@ use Zend;
 
 class ListaController  extends Controller{
     public function index(){
-    	//echo '['.__LINE__.']['.__FILE__.']';
+    	
     	//dd(\Lang::localeArray(false));
     	//dd(__());
         
