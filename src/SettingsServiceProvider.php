@@ -11,6 +11,8 @@ class SettingsServiceProvider extends ServiceProvider
 {
     use ServiceProviderTrait;
 
+    protected $defer = true;
+
     public static function topToolbar()
     {
         $rows = \Config::all();
