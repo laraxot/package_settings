@@ -1,17 +1,14 @@
 <?php
-
-
-
 namespace XRA\Settings;
+use XRA\Extend\BaseServiceProvider;
+//use Illuminate\Support\ServiceProvider;
+//use XRA\Extend\Traits\ServiceProviderTrait;
 
-use Illuminate\Support\ServiceProvider;
-use XRA\Extend\Traits\ServiceProviderTrait;
-
-class SettingsServiceProvider extends ServiceProvider
+class SettingsServiceProvider extends BaseServiceProvider
 {
-    use ServiceProviderTrait;
+    //use ServiceProviderTrait;
 
-    protected $defer = true;
+    //protected $defer = true;
 
     public static function topToolbar()
     {
