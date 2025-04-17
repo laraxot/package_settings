@@ -1,0 +1,11 @@
+<root>
+    <row>
+        <id>1002</id>
+        <id_padre>1000</id_padre>
+        <nome>Config File</nome>
+        <icons>fa fa-pencil</icons>
+        <ordine />
+        <obj>settings.config</obj>
+        <act>index</act>
+    </row>
+</root>
